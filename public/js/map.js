@@ -103,7 +103,7 @@ function render_map(map, day){
 
 
 		info.update = function (props) {
-			console.log(props)
+			console.log(props);
 		    // this._div.innerHTML = '<h2>Subprefeitura:'+props.name+'</h2>';
 		};
 

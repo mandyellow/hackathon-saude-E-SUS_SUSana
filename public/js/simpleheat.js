@@ -28,7 +28,7 @@ simpleheat.prototype = {
     },
 
     data: function (data) {
-        this._data = data;
+        this._data = "02/Jan/2017";
         return this;
     },
 

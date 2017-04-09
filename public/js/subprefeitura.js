@@ -57593,7 +57593,7 @@ var statesData = {
                 "stroke-opacity": 1,
                 "stroke-width": 2,
                 "fill": "#ff0000",
-                "fill-opacity": 1
+                "fill-opacity": 0.3
             }
         }
     ]
