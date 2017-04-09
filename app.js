@@ -37,6 +37,21 @@ var conversation = new Conversation({
   version: 'v1'
 });
 
+app.get('/heatmap', function(req, res) {
+	//res.type('json');
+	res.json({
+		date: req.query.date,
+		points: [
+			{'lat' : '-23,548', 'long' : '-46,6392', 'indicador' : '0.1'},
+			{'lat' : '-23,549', 'long' : '-46,6392', 'indicador' : '0.2'},
+			{'lat' : '-23,551', 'long' : '-46,6392', 'indicador' : '0.4'},
+			{'lat' : '-23,552', 'long' : '-46,6392', 'indicador' : '0.7'},
+			{'lat' : '-23,554', 'long' : '-46,6392', 'indicador' : '0.9'}
+		]
+	});	
+}
+);
+
 // Endpoint to be call from the client side
 app.post('/api/message', function(req, res) {
   var workspace = process.env.WORKSPACE_ID || '<workspace-id>';
