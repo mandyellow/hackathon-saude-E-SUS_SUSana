@@ -1,5 +1,7 @@
 
 var heatLayer;
+
+
 function render_map(map, day){
 
 		
@@ -163,6 +165,32 @@ function render_map(map, day){
 		var data = Papa.parse("csv/data_20170102.csv",config);
 
 }
+
+
+var MapControl = (function(map){
+	var dayIdx = -1;
+	
+	return{
+		init: function(){
+			var dayIdx = -1;
+		},
+
+		next: function() {
+			return dates[++idx];
+		},
+		previous: function(){
+			return dates[--idx];
+		}
+
+	}
+
+	function init(){
+
+	}
+});
+
+var ctr = MapControl();
+
 var map = L.map('map', {center:[-23.543501,-46.507022], zoom: 12 });
 var idx = -1;
 function next(){
