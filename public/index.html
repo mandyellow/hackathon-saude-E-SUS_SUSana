@@ -26,18 +26,17 @@
 
 	<nav aria-label="...">
 	  <ul class="pager">
-	    <li class="previous" onclick="render_map(map,previous())"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+	    <li class="previous" onclick="ctr.previous();render_map(map);"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
 	    <li id="day"></li>
-	    <li class="next" onclick="render_map(map,next())"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+	    <li class="next" onclick="ctr.next();render_map(map);"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
 	  </ul>
 	</nav>
 
 	<div id="map" style="position: fixed; width: 100%; height: 100%"></div>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-	<script src="js/simpleheat.js"></script>
+	<script src="js/leaflet-heat.js"></script>
 	<script src="js/papaparse/papaparse.js"></script>
-	<script src="js/HeatLayer.js"></script>
 	<script src="js/subprefeitura.js"></script>
 	<script src="js/dates.js"></script>
 	<script src="js/map.js"></script>
