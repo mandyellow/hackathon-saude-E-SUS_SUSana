@@ -65,6 +65,7 @@ var MapControl = (function(map){
 			var dayIdx = 0;
 		},
 		next: function() {
+			dayIdx +=10
 			return dates[++dayIdx];
 		},
 		previous: function(){
@@ -107,7 +108,10 @@ var MapControl = (function(map){
 function render_map(map){
 		
 		map.eachLayer(function (layer) {
-		    map.removeLayer(layer);
+			if (isNaN(layer._heat)) {
+				console.log(layer._heat);
+		    	map.removeLayer(layer);
+		    };
 		});
 		var heatLayer;
 
@@ -133,6 +137,10 @@ function render_map(map){
 
 		ctr.heatpoints(function(results, files){
 			var heatpoints = results.data.map(function(point){
+				if (isNaN(parseFloat(point[2])
+					|| parseFloat(point[3]))) {
+					return[1,1,1];
+				};
 				return[ parseFloat(point[2]),
 		 				parseFloat(point[3]),
 		 				parseFloat(point[4])
@@ -146,4 +154,6 @@ function render_map(map){
 var ctr = MapControl();
 
 var map = L.map('map', {center:[-23.543501,-46.507022], zoom: 12 });
+
+render_map(map)
 
