@@ -65,7 +65,6 @@ var MapControl = (function(map){
 			var dayIdx = 0;
 		},
 		next: function() {
-			dayIdx +=10
 			return dates[++dayIdx];
 		},
 		previous: function(){
