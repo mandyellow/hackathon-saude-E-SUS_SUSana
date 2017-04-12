@@ -7,6 +7,7 @@ var MapStyle = (function(map){
 	function highlightFeature(e) {
 
 	    var layer = e.target;
+	    $("#subprefeitura").html(e.target.feature.properties.name);
 	    layer.setStyle({
 	        weight: 5,
 	        color: '#999',
@@ -23,7 +24,7 @@ var MapStyle = (function(map){
 	}
 	function zoomToFeature(e) {
 	    map.fitBounds(e.target.getBounds());
-	    $("#subprefeitura").html(e.target.feature.properties.name);
+	    
 	}
 	
 	return {
