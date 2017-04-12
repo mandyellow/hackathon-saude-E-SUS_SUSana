@@ -133,7 +133,7 @@ function render_map(map){
 		    style: MapStyle(map).style,
 		    onEachFeature: MapStyle(map).onEachFeature
 		}).addTo(map);
-
+/*
 		ctr.pins(function(results, files){
 			results.data.map(function(point){
 				L.marker([ 
@@ -144,7 +144,7 @@ function render_map(map){
 				return;
 			});
 		});
-
+*/
 		ctr.heatpoints(function(results, files){
 			var heatpoints = results.data.map(function(point){
 				if (isNaN(parseFloat(point[2])
