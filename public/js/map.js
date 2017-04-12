@@ -145,7 +145,7 @@ function render_map(map){
 			});
 		});
 
-		ctr.heatpoints(function(results, files){
+	       ctr.heatpoints(function(results, files){
 			var heatpoints = results.data.map(function(point){
 				if (isNaN(parseFloat(point[2])
 					|| parseFloat(point[3]))) {
