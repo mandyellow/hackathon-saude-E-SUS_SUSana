@@ -134,6 +134,8 @@ function render_map(map){
 		    onEachFeature: MapStyle(map).onEachFeature
 		}).addTo(map);
 /*
+// Just removes Land Markers in the map by commeting this block.
+
 		ctr.pins(function(results, files){
 			results.data.map(function(point){
 				L.marker([ 
@@ -170,6 +172,12 @@ $('select').on('change', function() {
 	ctr.setDay(this.value);
 	render_map(map);
 })
+
+// Creates a animation on the map for testing...
+SetInterval(function () {
+  // Get a new day's data every half second
+  ctrl.next();
+}, 500);
 
 render_map(map)
 
