@@ -9,9 +9,9 @@ var MapStyle = (function(map){
 	    var layer = e.target;
 	    layer.setStyle({
 	        weight: 5,
-	        color: '#666',
-	        dashArray: '',
-	        fillOpacity: 0.7
+	        color: '#999',
+	        dashArray: '2',
+	        fillOpacity: 0.1
 	    });
 
 	    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -23,18 +23,18 @@ var MapStyle = (function(map){
 	}
 	function zoomToFeature(e) {
 	    map.fitBounds(e.target.getBounds());
+	    $("#subprefeitura").html(e.target.feature.properties.name);
 	}
 	
-
 	return {
 		style:function(feature){
 			return {
-		        fillColor: 'white',
-		        weight: 2,
+		        fillColor: '#000',
+		        weight: 4,
 		        opacity: 1,
-		        color: 'white',
+		        color: '#fff',
 		        dashArray: '3',
-		        fillOpacity: 0.3
+		        fillOpacity: 0.1
 		    };
 		},
 		onEachFeature: function(feature, layer) {
@@ -60,15 +60,25 @@ var MapControl = (function(map){
 		return dates[++dayIdx];
 	}
 
+	function parseDay (day) {
+		return day.slice(6,8)+"/"+day.slice(4,6)+"/"+day.slice(0,4)
+	}
+
 	return{
 		init: function(){
 			var dayIdx = 0;
 		},
-		next: function() {
-			return dates[++dayIdx];
+		setDay:function(day){
+			dayIdx = dates.indexOf(day)
+			return parseDay(day);
 		},
-		previous: function(){
-			return dates[--dayIdx];
+		next: function(selector) {
+			$(selector).html(parseDay(dates[++dayIdx]))
+			return parseDay(dates[dayIdx]);
+		},
+		previous: function(selector){
+			$(selector).html(parseDay(dates[--dayIdx]))
+			return parseDay(dates[dayIdx]);
 		},
 		//retorna os pins das unidades de saúde
 		pins: function(callback){
@@ -120,7 +130,7 @@ function render_map(map){
 
 		geojson = L.geoJson(statesData, {
 		    style: MapStyle(map).style,
-		    onEachFeature: MapStyle().onEachFeature
+		    onEachFeature: MapStyle(map).onEachFeature
 		}).addTo(map);
 
 		ctr.pins(function(results, files){
@@ -151,8 +161,14 @@ function render_map(map){
 }
 
 var ctr = MapControl();
+ctr.next()
 
 var map = L.map('map', {center:[-23.543501,-46.507022], zoom: 12 });
+
+$('select').on('change', function() {
+	ctr.setDay(this.value);
+	render_map(map);
+})
 
 render_map(map)
 

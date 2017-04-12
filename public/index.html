@@ -17,22 +17,118 @@
 
 	<!-- Bootstrap -->
     
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<!-- j
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
-
-
-
-
 	<nav aria-label="...">
 	  <ul class="pager">
-	    <li class="previous" onclick="ctr.previous();render_map(map);"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
-	    <li id="day"></li>
-	    <li class="next" onclick="ctr.next();render_map(map);"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+	    <li class="previous" onclick="ctr.previous('#day');render_map(map);"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+	    <li class="next" onclick="ctr.next('#day');render_map(map);"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
 	  </ul>
 	</nav>
+	Query (necessary for Bootstrap's JavaScript plugins) -->
 
-	<div id="map" style="position: fixed; width: 100%; height: 100%"></div>
+	<div class="info">	
+		<h1>Dia de Análise:<br>
+			<select>
+			  	<option value='20170101'>01/01/2017</option>
+				<option value='20170102'>02/01/2017</option>
+				<option value='20170103'>03/01/2017</option>
+				<option value='20170104'>04/01/2017</option>
+				<option value='20170105'>05/01/2017</option>
+				<option value='20170106'>06/01/2017</option>
+				<option value='20170107'>07/01/2017</option>
+				<option value='20170108'>08/01/2017</option>
+				<option value='20170109'>09/01/2017</option>
+				<option value='20170110'>10/01/2017</option>
+				<option value='20170111'>11/01/2017</option>
+				<option value='20170112'>12/01/2017</option>
+				<option value='20170113'>13/01/2017</option>
+				<option value='20170114'>14/01/2017</option>
+				<option value='20170115'>15/01/2017</option>
+				<option value='20170116'>16/01/2017</option>
+				<option value='20170117'>17/01/2017</option>
+				<option value='20170118'>18/01/2017</option>
+				<option value='20170119'>19/01/2017</option>
+				<option value='20170120'>20/01/2017</option>
+				<option value='20170121'>21/01/2017</option>
+				<option value='20170122'>22/01/2017</option>
+				<option value='20170123'>23/01/2017</option>
+				<option value='20170124'>24/01/2017</option>
+				<option value='20170125'>25/01/2017</option>
+				<option value='20170126'>26/01/2017</option>
+				<option value='20170127'>27/01/2017</option>
+				<option value='20170128'>28/01/2017</option>
+				<option value='20170129'>29/01/2017</option>
+				<option value='20170130'>30/01/2017</option>
+				<option value='20170131'>31/01/2017</option>
+				<option value='20170201'>01/02/2017</option>
+				<option value='20170202'>02/02/2017</option>
+				<option value='20170203'>03/02/2017</option>
+				<option value='20170204'>04/02/2017</option>
+				<option value='20170205'>05/02/2017</option>
+				<option value='20170206'>06/02/2017</option>
+				<option value='20170207'>07/02/2017</option>
+				<option value='20170208'>08/02/2017</option>
+				<option value='20170209'>09/02/2017</option>
+				<option value='20170210'>10/02/2017</option>
+				<option value='20170211'>11/02/2017</option>
+				<option value='20170212'>12/02/2017</option>
+				<option value='20170213'>13/02/2017</option>
+				<option value='20170214'>14/02/2017</option>
+				<option value='20170215'>15/02/2017</option>
+				<option value='20170216'>16/02/2017</option>
+				<option value='20170217'>17/02/2017</option>
+				<option value='20170218'>18/02/2017</option>
+				<option value='20170219'>19/02/2017</option>
+				<option value='20170220'>20/02/2017</option>
+				<option value='20170221'>21/02/2017</option>
+				<option value='20170222'>22/02/2017</option>
+				<option value='20170223'>23/02/2017</option>
+				<option value='20170224'>24/02/2017</option>
+				<option value='20170225'>25/02/2017</option>
+				<option value='20170226'>26/02/2017</option>
+				<option value='20170227'>27/02/2017</option>
+				<option value='20170228'>28/02/2017</option>
+				<option value='20170301'>01/03/2017</option>
+				<option value='20170302'>02/03/2017</option>
+				<option value='20170303'>03/03/2017</option>
+				<option value='20170304'>04/03/2017</option>
+				<option value='20170305'>05/03/2017</option>
+				<option value='20170306'>06/03/2017</option>
+				<option value='20170307'>07/03/2017</option>
+				<option value='20170308'>08/03/2017</option>
+				<option value='20170309'>09/03/2017</option>
+				<option value='20170310'>10/03/2017</option>
+				<option value='20170311'>11/03/2017</option>
+				<option value='20170312'>12/03/2017</option>
+				<option value='20170313'>13/03/2017</option>
+				<option value='20170314'>14/03/2017</option>
+				<option value='20170315'>15/03/2017</option>
+				<option value='20170316'>16/03/2017</option>
+				<option value='20170317'>17/03/2017</option>
+				<option value='20170318'>18/03/2017</option>
+				<option value='20170319'>19/03/2017</option>
+				<option value='20170320'>20/03/2017</option>
+				<option value='20170321'>21/03/2017</option>
+				<option value='20170322'>22/03/2017</option>
+				<option value='20170323'>23/03/2017</option>
+				<option value='20170324'>24/03/2017</option>
+				<option value='20170325'>25/03/2017</option>
+				<option value='20170326'>26/03/2017</option>
+				<option value='20170327'>27/03/2017</option>
+				<option value='20170328'>28/03/2017</option>
+				<option value='20170329'>29/03/2017</option>
+				<option value='20170330'>30/03/2017</option>
+				<option value='20170331'>31/03/2017</option>
+			</select>
+			<small id="day"></small></h1>
+
+		<h3>Prefeitura regional<br><small id="subprefeitura"></small></h3>
+	</div>
+
+	<div id="map" style="position: fixed; width: 80%; height: 100%"></div>
+	
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 	<script src="js/leaflet-heat.js"></script>
