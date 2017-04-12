@@ -171,12 +171,5 @@ $('select').on('change', function() {
 	render_map(map);
 })
 
-// Creates a animation on the map for testing...
-SetInterval(function () {
-  // Get a new day's data every 10 seconds
-  ctr.next();
-  render_map(map);
-}, 10000);
-
 render_map(map)
 
